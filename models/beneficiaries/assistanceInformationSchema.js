@@ -2,27 +2,27 @@ const mongoose = require('mongoose');
 
 const AssistanceSchema = new mongoose.Schema({
   requiresAssistance: {
-    type: String,
+    type: Boolean,
     default: false
   },
   requiresTechSupport: {
-    type: String,
+    type: Boolean,
     default: false
   },
   hasTechSupport: {
-    type: String,
+    type: Boolean,
     default: false
   },
   requiresTherapy: {
-    type: String,
+    type: Boolean,
     default: false
   },
   receivesTherapy: {
-    type: String,
+    type: Boolean,
     default: false
   },
   hasInterdictionProcess: {
-    type: String,
+    type: Boolean,
     default: false
   }
 });

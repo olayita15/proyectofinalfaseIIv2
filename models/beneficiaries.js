@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const basicInfoSchema = require("./beneficiaries/basicinfoSchema");
-const birthinformation = require("./beneficiaries/birthinformationSchema");
+
+
+const basicInfoSchema = require("./beneficiaries/basicInfoSchema");
+const birthInfoSchema = require("./beneficiaries/birthinformationSchema");
+const healthSchema = require('./beneficiaries/healthSchema');
 
 const beneficiarySchema = new Schema({
     basicinfo: basicInfoSchema,
-    birthinformation: birthinformation
+    birthinformation: birthInfoSchema,
+    healthInfo: healthSchema
 });
 
 const beneficiary = mongoose.model('beneficiary', beneficiarySchema);
