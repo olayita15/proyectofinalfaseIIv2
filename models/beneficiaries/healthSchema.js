@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const healthSchema = new mongoose.Schema({
   regime: {
@@ -61,4 +62,4 @@ const healthSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Health', healthSchema);
+module.exports = healthSchema
