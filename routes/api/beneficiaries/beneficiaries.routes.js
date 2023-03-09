@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const beneficiaries = require('../../../models/beneficiaries');
+const Beneficiaries = require('../../../models/beneficiaries');
 
+// Endpoint Get All Beneficiaries
 router.get("/", async (req, res) => {
     try {
-        const beneficiariesRes = await beneficiaries.find();
+        const beneficiariesRes = await Beneficiaries.find();
         res.json(beneficiariesRes);
     } catch (error) {
         console.log(error)
@@ -11,12 +12,12 @@ router.get("/", async (req, res) => {
     }
 });
 
+
+
+// Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
-        console.log(req.body)
-        console.log(beneficiaries)
-        const newBeneficiariesRes = await beneficiaries.create(req.body);
-        console.log(newBeneficiariesRes)
+        const newBeneficiariesRes = await Beneficiaries.create(req.body);
         res.json(newBeneficiariesRes);
     } catch (error) {
         console.log(error)
