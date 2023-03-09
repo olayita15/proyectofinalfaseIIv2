@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const basicInfoSchema = require("./beneficiaries/basicinfo");
+const basicInfoSchema = require("./beneficiaries/basicinfoSchema");
 const birthinformation = require("./beneficiaries/birthinformationSchema");
 
 const beneficiarySchema = new Schema({
