@@ -7,7 +7,7 @@ const birthInfoSchema = require("./beneficiaries/birthinformationSchema");
 const healthSchema = require('./beneficiaries/healthSchema');
 
 const beneficiarySchema = new Schema({
-    basicinfo: basicInfoSchema,
+    basicinfo: {type: basicInfoSchema, required: true},
     birthinformation: birthInfoSchema,
     healthInfo: healthSchema
 });
