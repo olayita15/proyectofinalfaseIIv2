@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
 
 const basicInfoSchema = new mongoose.Schema({
   numDoc: {
@@ -64,4 +66,4 @@ const basicInfoSchema = new mongoose.Schema({
   }  
 });
 
-module.exports = mongoose.model('BasicInfo', basicInfoSchema);
+module.exports = basicInfoSchema;
