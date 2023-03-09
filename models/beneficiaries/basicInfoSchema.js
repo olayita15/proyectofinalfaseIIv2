@@ -57,25 +57,11 @@ const basicInfoSchema = new mongoose.Schema({
   secondLastName: {
     type: String
   },
-  birthDate: {
-    type: Date,
-    required: true
-  },////////////CHECK///////////////////////
+  ////////////CHECK///////////////////////
   gender: {
     type: String,
     required: true
-  },
-  birthCountry: {
-    type: String,
-  },
-  birthDepartment: {
-    type: String,
-    required: true
-  },
-  birthMunicipality: {
-    type: String,
-    required: true
-  }
+  }  
 });
 
 module.exports = mongoose.model('BasicInfo', basicInfoSchema);
