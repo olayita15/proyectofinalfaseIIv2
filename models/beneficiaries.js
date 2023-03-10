@@ -7,13 +7,15 @@ const birthInfoSchema = require("./beneficiaries/birthinformationSchema");
 const healthSchema = require('./beneficiaries/healthSchema');
 const residencyInformationSchema = require('./beneficiaries/residencyInformationSchema');
 const socialInformationSchema = require('./beneficiaries/socialInformationSchema');
+const assistanceInformationSchema = require('./beneficiaries/assistanceInformationSchema');
 
 const beneficiarySchema = new Schema({
     basicinfo: {type: basicInfoSchema/* required: true */},
     birthinformation: birthInfoSchema,
     healthInfo: healthSchema,
     residencyInformation: residencyInformationSchema,
-    socialInformation: socialInformationSchema
+    socialInformation: socialInformationSchema,
+    assistanceInformation: assistanceInformationSchema,
 });
 
 const beneficiary = mongoose.model('beneficiary', beneficiarySchema);
