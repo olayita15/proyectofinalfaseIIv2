@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Beneficiary = require('../../../models/beneficiaries');
-
+//
 // Endpoint Get all Beneficiaries basicinfo
 router.get("/", async (req, res) => {
     try {
@@ -26,6 +26,8 @@ router.get("/:numDoc", async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
+
 
 // Endpoint patch to edit Beneficiarie basicinfo finding for numDoc
 router.patch("/:numDoc", async (req, res) => {
