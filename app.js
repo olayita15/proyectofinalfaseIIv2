@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 
-
 //Definicion del servidor
 const app = express();
 app.use(express.json());
@@ -10,13 +9,11 @@ app.use(express.json());
 //Rutas
 app.use(require('./routes'));
 
-
 // Port assign
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`servidor andando en: ${PORT}`)
 });
-
 
 // mongo db conection
 mongoose.connect(process.env.URL,
@@ -24,6 +21,5 @@ mongoose.connect(process.env.URL,
 )
     .then(() => console.log('Base de datos conectada'))
     .catch(error => console.log('Error de conexión a MongoDB: ', error));
-
 
 module.exports = app;
