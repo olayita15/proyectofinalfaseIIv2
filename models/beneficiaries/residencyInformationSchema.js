@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const ResidencyInformationSchema = new mongoose.Schema({
+const residencyInformationSchema = new Schema({
   countryOfResidence: { 
     type: String,
     required: true
@@ -40,4 +41,4 @@ const ResidencyInformationSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('ResidencyInformation', ResidencyInformationSchema);
+module.exports = residencyInformationSchema;

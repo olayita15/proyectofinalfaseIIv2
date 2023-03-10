@@ -1,4 +1,7 @@
-const socialInformationSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const socialInformationSchema = new Schema({
   groupEthnicity: {
     type: String,
     required: false
@@ -30,4 +33,4 @@ const socialInformationSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Social', socialInformationSchema);
+module.exports = socialInformationSchema;
