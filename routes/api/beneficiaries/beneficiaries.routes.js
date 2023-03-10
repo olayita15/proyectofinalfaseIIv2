@@ -17,11 +17,13 @@ router.get("/", async (req, res) => {
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
-        const newBeneficiariesRes = await Beneficiaries.create(req.body);
-        res.json(newBeneficiariesRes);
+    const newBeneficiariesRes = await Beneficiaries.create(req.body);
+    newBeneficiariesRes.fullName = req.body.fullName;
+    const newBeneficiariesJSON = newBeneficiariesRes.toObject({ virtuals: true });
+    res.json(newBeneficiariesJSON);
     } catch (error) {
-        console.log(error)
-        res.status(500).json({ message: error.message });
+    console.log(error)
+    res.status(500).json({ message: error.message });
     }
 });
 
