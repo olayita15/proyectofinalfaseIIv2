@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const parentSchema = new mongoose.Schema({
   fatherDocumentType: { type: String },
-  fatherDocumentNumber: { type: String },
+  fatherDocumentNumber: { type: Number },
   fatherFirstName: { type: String },
   fatherSecondName: { type: String },
   fatherFirstLastname: { type: String },
@@ -12,7 +12,7 @@ const parentSchema = new mongoose.Schema({
   fatherBirthDepartment: { type: String },
   fatherBirthCity: { type: String },
   motherDocumentType: { type: String },
-  motherDocumentNumber: { type: String },
+  motherDocumentNumber: { type: Number },
   motherFirstName: { type: String },
   motherSecondName: { type: String },
   motherFirstLastname: { type: String },
@@ -23,6 +23,7 @@ const parentSchema = new mongoose.Schema({
   motherBirthCity: { type: String },
 });
 
-const Parent = mongoose.model('Parent', parentSchema);
+module.exports = parentSchema;
 
-module.exports = Parent;
+
+///waal
