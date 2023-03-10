@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const healthSchema = new Schema({
   regime: {
     type: String,
+    enum: ['SUBSIDIADO', 'CONTRIBUTIVO', 'ESPECIAL', 'NO_AFILIADO'],
     required: true
   },
   eps: {
