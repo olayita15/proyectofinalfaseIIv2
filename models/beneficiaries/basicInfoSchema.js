@@ -17,7 +17,18 @@ const basicInfoSchema = new Schema({
   secondName: { type: String },
   firstLastName: { type: String, required: true },
   secondLastName: { type: String },
-  gender: { type: String, enum: ['MASCULINO','FEMENINO'], required: true }  
+  gender: { type: String, enum: ['MASCULINO','FEMENINO'], required: true }
+},
+{
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+});
+
+basicInfoSchema.virtual("fullName").get(function () {
+  console.log("Getting fullName");
+  const { firstName, secondName, firstLastName, secondLastName } = this;
+  const fullName = `${firstName} ${secondName ? secondName + " " : ""}${firstLastName} ${secondLastName ? secondLastName : ""}`;
+  return fullName.trim();
 });
 
 module.exports = basicInfoSchema;
