@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const AssistanceSchema = new mongoose.Schema({
+const AssistanceSchema = new Schema({
   requiresAssistance: {
     type: Boolean,
     default: false
@@ -27,4 +28,4 @@ const AssistanceSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Assistance', AssistanceSchema);
+module.exports = AssistanceSchema

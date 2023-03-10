@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-
 // Endpoint Get HealthInfo by numDoc
 router.get("/:numDoc", async (req, res) => {
     try {
@@ -30,7 +29,7 @@ router.get("/:numDoc", async (req, res) => {
     }
 });
 
-// Endpoint patch to edit Beneficiarie basicinfo finding for numDoc
+// Endpoint patch to edit Beneficiarie healthinfo finding for numDoc
 router.patch("/:numDoc", async (req, res) => {
     try {
         const numDoc = req.params.numDoc;
@@ -50,6 +49,5 @@ router.patch("/:numDoc", async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
 
 module.exports = router;
