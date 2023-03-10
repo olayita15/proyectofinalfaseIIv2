@@ -17,7 +17,7 @@ const basicInfoSchema = new Schema({
   secondName: { type: String },
   firstLastName: { type: String, required: true },
   secondLastName: { type: String },
-  gender: { type: String, required: true }  
+  gender: { type: String, enum: ['MASCULINO','FEMENINO'], required: true }  
 });
 
 module.exports = basicInfoSchema;
