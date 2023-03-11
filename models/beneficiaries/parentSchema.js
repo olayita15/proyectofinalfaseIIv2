@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
+const calculateAge = require('./controller/calculateAge');
 
-const parentSchema = new mongoose.Schema({
+const parentSchema = new Schema({
   fatherDocumentType: { type: String },
   fatherDocumentNumber: { type: Number },
   fatherFirstName: { type: String },
@@ -21,9 +23,21 @@ const parentSchema = new mongoose.Schema({
   motherBirthCountry: { type: String },
   motherBirthDepartment: { type: String },
   motherBirthCity: { type: String },
+},
+{
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+});
+
+parentSchema.virtual('ageFather').get(function() {
+  const age = calculateAge(this.fatherBirthdate);
+  return age.years;
+});
+
+parentSchema.virtual('ageMother').get(function() {
+  const age = calculateAge(this.motherBirthdate);
+  return age.years;
 });
 
 module.exports = parentSchema;
-
-
 ///waal
