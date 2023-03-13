@@ -9,15 +9,17 @@ const socialInformationSchema = require('./beneficiaries/socialInformationSchema
 const assistanceInformationSchema = require('./beneficiaries/assistanceInformationSchema');
 const disabilityInfoSchema = require("./beneficiaries/disabilityInfoSchema");
 const parentSchema = require("./beneficiaries/parentSchema");
+const guardianSchema = require('./beneficiaries/guardianSchema')
 
 const beneficiarySchema = new Schema({
-    basicinfo: {type: basicInfoSchema, virtual:true/* required: false */},
+    basicinfo: {type: basicInfoSchema, required: false },
     birthinformation: birthInfoSchema,
     healthInfo: healthSchema,
     residencyInformation: residencyInformationSchema,
     socialInformation: socialInformationSchema,
     assistanceInformation: assistanceInformationSchema,
     parent: {type: parentSchema, required: false},
+    guardianInfo: {type: guardianSchema},
     disabilityInfo: disabilityInfoSchema
 },
 {

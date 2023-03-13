@@ -3,7 +3,7 @@ const Beneficiaries = require('../../../models/beneficiaries');
 
 router.get("/", async (req, res) => {
     try {
-        const guardian = await guardianInfo.find({}, {guardianInfo: 1});
+        const guardian = await Beneficiaries.find({}, {guardianInfo: 1});
         res.json(guardian);
     } catch (error) {
         console.log(error)

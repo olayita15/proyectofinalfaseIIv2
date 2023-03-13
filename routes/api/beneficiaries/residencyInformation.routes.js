@@ -2,7 +2,6 @@ const router = require('express').Router();
 const residencyInformation = require('../../../models/beneficiaries');
 
 // All information of the category - residency information
-
 router.get('/', async (req, res) => {
   try{
       const residencyInformationRes = await residencyInformation.find({},{residencyInformation:1});
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
 });
 
 //  The information of a beneficiary in the category social information
-
 router.get('/:numDoc', async (req, res) => {
   try{
       const numDoc = req.params.numDoc;
