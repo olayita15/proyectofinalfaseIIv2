@@ -3,7 +3,7 @@ const socialInformation = require('../../../models/beneficiaries');
 
 // All information of the category - social information
 
-router.get('/socialInformation', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const socialInformationRes = await socialInformation.find({},{socialInformation:1});
         res.json(socialInformationRes);

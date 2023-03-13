@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+//miod
 
 const guardianSchema = new mongoose.Schema({
   guardianPersonType: {
@@ -47,4 +48,4 @@ const guardianSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Guardian', guardianSchema);
+module.exports = guardianSchema;
