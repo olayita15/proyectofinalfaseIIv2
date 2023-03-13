@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Beneficiary = require('../../../models/beneficiaries');
-//
+//thhs
 // Endpoint Get all Beneficiaries basicinfo
 router.get("/", async (req, res) => {
     try {
