@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const disabilityInfoSchema = new mongoose.Schema({
+const disabilityInfoSchema = new Schema({
   disability: { type: Boolean, required: true },
   certifiedDisability: { type: Boolean, required: true },
   entityCertifiesDisability: { type: String, required: true },

@@ -27,8 +27,6 @@ router.get("/:numDoc", async (req, res) => {
     }
 });
 
-
-
 // Endpoint patch to edit Beneficiarie basicinfo finding for numDoc
 router.patch("/:numDoc", async (req, res) => {
     try {
@@ -50,6 +48,5 @@ router.patch("/:numDoc", async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
 
 module.exports = router;
