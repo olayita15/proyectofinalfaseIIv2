@@ -1,7 +1,5 @@
 const router = require("express").Router();
-
 const Beneficiary = require('../../../models/beneficiaries');
-
 
 // Get all parentinformation of all beneficiaries
 router.get("/", async (req, res) => {
@@ -12,7 +10,6 @@ router.get("/", async (req, res) => {
         console.log(error)
         res.status(500).json({ message: error.message });
     } 
-    
 });
 
 // Get beneficiarie parent for doc 
@@ -30,7 +27,6 @@ router.get("/:numDoc", async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   });
-  
 
 // Update beneficiary disabilityInfo by numDoc
 router.patch("/:numDoc", async (req, res) => {
@@ -53,7 +49,5 @@ router.patch("/:numDoc", async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   });
-  
-
 
 module.exports = router;

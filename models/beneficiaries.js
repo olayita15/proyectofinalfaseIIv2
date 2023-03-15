@@ -10,7 +10,7 @@ const assistanceInformationSchema = require('./beneficiaries/assistanceInformati
 const disabilityInfoSchema = require("./beneficiaries/disabilityInfoSchema");
 const parentSchema = require("./beneficiaries/parentSchema");
 const calculateAge = require('./beneficiaries/controller/calculateAge');
-const typeComplementSchema = require('./beneficiaries/typeComplementSchema');
+const guardianSchema = require('./beneficiaries/guardianSchema')
 
 const beneficiarySchema = new Schema({
     basicinfo: {type: basicInfoSchema, virtual:true/* required: false */},
@@ -20,8 +20,8 @@ const beneficiarySchema = new Schema({
     socialInformation: socialInformationSchema,
     assistanceInformation: assistanceInformationSchema,
     parent: {type: parentSchema, required: false},
-    disabilityInfo: disabilityInfoSchema,
-    typeComplement: typeComplementSchema
+    guardianInfo: {type: guardianSchema},
+    disabilityInfo: disabilityInfoSchema
     
 
 },

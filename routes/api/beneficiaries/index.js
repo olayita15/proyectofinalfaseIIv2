@@ -11,7 +11,6 @@ router.use('/residencyInformation', require('./residencyInformation.routes'))
 router.use('/socialInformation',require('./socialInformation.routes'))
 router.use('/parent',require('./parent.routes'))
 router.use('/disabilityInfo',require('./disabilityInfo.routes'))
-router.use('/typeComplement', require('./typeComplement.routes.js'))
 
 
 module.exports = router;

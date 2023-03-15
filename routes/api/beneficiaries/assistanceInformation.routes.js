@@ -2,8 +2,6 @@ const router = require("express").Router();
 const assistInfo = require('../../../models/beneficiaries');
 const Beneficiaries = require('../../../models/beneficiaries');
 
-
-
 router.get("/", async (req, res) => {
     try {
         const assists = await assistInfo.find({}, {assistanceInformation: 1});

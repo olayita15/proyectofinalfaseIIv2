@@ -12,8 +12,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-
-
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
@@ -26,6 +24,5 @@ router.post("/", async (req, res)=>{
     res.status(500).json({ message: error.message });
     }
 });
-
 
 module.exports = router;

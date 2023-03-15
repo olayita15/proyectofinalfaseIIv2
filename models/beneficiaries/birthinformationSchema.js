@@ -4,8 +4,7 @@ const calculateAge = require('./controller/calculateAge');
 var moment = require('moment'); // require
 moment().format(); 
 const calculateComplement = require('./controller/calculateComplement');
-const typeComplement = require('./typeComplementSchema');
-const typeComplementSchema = require('./typeComplementSchema');
+
 
 const birthInfoSchema = new Schema({
     birthCountry: { type: String },
