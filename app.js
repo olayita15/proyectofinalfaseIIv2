@@ -4,14 +4,13 @@ const mongoose = require('mongoose');
 const cors =  require('cors')
 
 
-
-//Conexión front cors
-app.use(cors());
-
-
 //Definicion del servidor
 const app = express();
 app.use(express.json());
+
+
+//Conexión front cors
+app.use(cors());
 
 //Rutas
 app.use(require('./routes'));
