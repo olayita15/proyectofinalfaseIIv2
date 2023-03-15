@@ -25,7 +25,6 @@ const basicInfoSchema = new Schema({
 });
 
 basicInfoSchema.virtual("fullName").get(function () {
-  console.log("Getting fullName");
   const { firstName, secondName, firstLastName, secondLastName } = this;
   const fullName = `${firstName} ${secondName ? secondName + " " : ""}${firstLastName} ${secondLastName ? secondLastName : ""}`;
   return fullName.trim();
