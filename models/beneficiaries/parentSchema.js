@@ -40,4 +40,3 @@ parentSchema.virtual('ageMother').get(function() {
 });
 
 module.exports = parentSchema;
-///waal
