@@ -3,25 +3,20 @@ const mongoose = require('mongoose')
 const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
 
 const processExcelData =  (excelData) => {
-    const basicInfo = {
-        numDoc: excelData[0] ? excelData[0].toString() : '',
-        curState: excelData[1] === 'ACTIVO',
-        joinDate: excelData[2] ? new Date((excelData[2] - 25569) * 86400 * 1000) : null,
-        exitDate: excelData[3] ? new Date((excelData[3] - 25569) * 86400 * 1000) : null,
-        enterBy: excelData[4] || '',
-        reasonForExit: excelData[5] || '',
-        otherExitReason: excelData[6] || '',
-        unityName: excelData[7] || '',
-        duoName: excelData[8] || '',
-        teachers: excelData[9] ? excelData[9].split(',') : [],
-        documentType: excelData[10] || '',
-        firstName: excelData[11] || '',
-        secondName: excelData[12] || '',
-        firstLastName: excelData[13] || '',
-        secondLastName: excelData[14] || '',
-        gender: excelData[15] || ''
+    const residencyInformation = {
+        countryOfResidence: excelData[1] || '',
+        residenceDepartment: excelData[2] || '',
+        locationZone: excelData[3] || '',
+        headerType: excelData[4] || '',
+        localityName: excelData[5] || '',
+        neighborhood: excelData[6] || '',
+        foreignZoneName: excelData[7] || '',
+        address: excelData[8] || '',
+        primaryPhone: excelData[9] || '',
+        secondaryPhone: excelData[10] || '',
+        householdStratum: excelData[11] || ''
     };
-    return basicInfo;
+    return residencyInformation;
 };
 
 module.exports = processExcelData;
