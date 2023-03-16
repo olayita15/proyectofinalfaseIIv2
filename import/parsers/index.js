@@ -7,7 +7,6 @@ const compileInfo = (row) =>{
     basicinfo(row);
     residencyInformation(row);
     socialInformation(row);
-    console.log(beneficiary);
 }
 
 module.exports = compileInfo;

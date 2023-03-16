@@ -9,7 +9,7 @@ const residencyInformationSchema = new Schema({
   localityName: { type: String },
   neighborhood: { type: String },
   foreignZoneName: { type: String },
-  address: { type: String, required: true },
+  address: { type: String },
   primaryPhone: { type: String },
   secondaryPhone: { type: String },
   householdStratum: { type: Number }

@@ -28,9 +28,8 @@ const beneficiarySchema = new Schema({
 {
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
-    
+    validateBeforeSave: true 
 });
-
 
 const beneficiary = mongoose.model('beneficiary', beneficiarySchema);
 
