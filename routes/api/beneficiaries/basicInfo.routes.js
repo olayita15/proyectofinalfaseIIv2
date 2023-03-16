@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Beneficiary = require('../../../models/beneficiaries');
+
 const { getBasicInfo, getBeneficiaryByNumDoc, editBeneficiaryBasicInfo } = require('../../../controllers/beneficiaries/basicinfoController');
 
 // Endpoint Get all Beneficiaries basicinfo

@@ -9,10 +9,11 @@ const socialInformationSchema = require('./beneficiaries/socialInformationSchema
 const assistanceInformationSchema = require('./beneficiaries/assistanceInformationSchema');
 const disabilityInfoSchema = require("./beneficiaries/disabilityInfoSchema");
 const parentSchema = require("./beneficiaries/parentSchema");
+const calculateAge = require('./beneficiaries/controller/calculateAge');
 const guardianSchema = require('./beneficiaries/guardianSchema')
 
 const beneficiarySchema = new Schema({
-    basicinfo: {type: basicInfoSchema, required: false },
+    basicinfo: {type: basicInfoSchema, virtual:true/* required: false */},
     birthinformation: birthInfoSchema,
     healthInfo: healthSchema,
     residencyInformation: residencyInformationSchema,
@@ -21,6 +22,8 @@ const beneficiarySchema = new Schema({
     parent: {type: parentSchema, required: false},
     guardianInfo: {type: guardianSchema},
     disabilityInfo: disabilityInfoSchema
+    
+
 },
 {
     toJSON: { virtuals: true },
@@ -28,5 +31,7 @@ const beneficiarySchema = new Schema({
     
 });
 
+
 const beneficiary = mongoose.model('beneficiary', beneficiarySchema);
+
 module.exports = beneficiary;

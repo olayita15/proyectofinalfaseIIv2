@@ -3,6 +3,8 @@ const { Schema } = mongoose;
 const calculateAge = require('./controller/calculateAge');
 var moment = require('moment'); // require
 moment().format(); 
+const calculateComplement = require('./controller/calculateComplement');
+
 
 const birthInfoSchema = new Schema({
     birthCountry: { type: String },
@@ -14,6 +16,9 @@ const birthInfoSchema = new Schema({
     toJSON: { virtuals: true },
     toObject: { virtuals: true }
 });
+
+
+
 
 function getAgeField(type, fieldName) {
     return birthInfoSchema.virtual(fieldName).get(function () {
@@ -39,5 +44,12 @@ birthInfoSchema.virtual("totalAge").get(function () {
     const dayString = days > 0 ? `${days} DIAS` : "";
     return yearString + monthString + dayString;
 });
+
+birthInfoSchema.virtual('typeComplement').get(function(){
+    const birthDate = new Date(this.birthDate);
+    console.log(birthDate);
+    const typeComplement = calculateComplement(birthDate);
+    return typeComplement
+  });
 
 module.exports = birthInfoSchema;

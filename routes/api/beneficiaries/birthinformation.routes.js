@@ -1,3 +1,4 @@
+
 const router = require("express").Router();
 const { getAllBirthInformation, getBirthInformationByNumDoc, updateBirthInformationByNumDoc} = require('../../../controllers/beneficiaries/birthinformationController');
 
