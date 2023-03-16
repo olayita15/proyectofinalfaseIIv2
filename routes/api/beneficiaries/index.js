@@ -1,5 +1,6 @@
 //LOCAL beneficiarie
 const router = require('express').Router();
+const errorController = require('../../../controllers/errors/errorController');
 
 router.use('/',require('./beneficiaries.routes'))
 router.use('/basicinfo',require('./basicInfo.routes'))
@@ -12,5 +13,7 @@ router.use('/socialInformation',require('./socialInformation.routes'))
 router.use('/parent',require('./parent.routes'))
 router.use('/disabilityInfo',require('./disabilityInfo.routes'))
 
+// Error handling middleware
+router.use(errorController.handleErrors);
 
 module.exports = router;
