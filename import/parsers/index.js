@@ -8,9 +8,9 @@ const beneficiary = require('./beneficiary');
 
 const compileInfo = (row) =>{
     basicinfo(row);
-    /*disabilityInfo(row);
+    /*disabilityInfo(row);*/
     parent(row);
-    residencyInformation(row);
+    /*residencyInformation(row);
     health(row);
     socialInformation(row);*/
     console.log(beneficiary);

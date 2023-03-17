@@ -10,7 +10,7 @@ const processExcelData =  (excelData) => {
         fatherSecondName: excelData[4] || '',
         fatherFirstLastname: excelData[5] || '',
         fatherSecondLastname: excelData[6] || '',
-        fatherBirthdate: excelData[7] ? new Date((excelData[7] - 25569) * 86400 * 1000) : null,
+        fatherBirthDate: excelData[2] ? new Date((excelData[2] - 25569) * 86400 * 1000) : null,
         fatherBirthCountry: excelData[8] || '',
         fatherBirthDepartment: excelData[9] || '',
         fatherBirthCity: excelData[10] || '',
