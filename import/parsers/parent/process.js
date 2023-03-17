@@ -1,8 +1,10 @@
-// const data = require('./read');
+//const data = require('./read');
 const mongoose = require('mongoose')
 const BasicInfo = require('../../../models/beneficiaries/parentSchema');
 
 const processExcelData =  (excelData) => {
+    /*console.log(excelData[18]);
+    console.log(excelData[19]);*/
     const parent = {
         fatherDocumentType: excelData[1] || '',
         fatherDocumentNumber: excelData[2] || '',
@@ -10,20 +12,20 @@ const processExcelData =  (excelData) => {
         fatherSecondName: excelData[4] || '',
         fatherFirstLastname: excelData[5] || '',
         fatherSecondLastname: excelData[6] || '',
-        fatherBirthDate: excelData[2] ? new Date((excelData[2] - 25569) * 86400 * 1000) : null,
-        fatherBirthCountry: excelData[8] || '',
-        fatherBirthDepartment: excelData[9] || '',
-        fatherBirthCity: excelData[10] || '',
-        motherDocumentType: excelData[11] || '',
-        motherDocumentNumber: excelData[12] || '',
-        motherFirstName: excelData[13] || '',
-        motherSecondName: excelData[14] || '',
-        motherFirstLastname: excelData[15] || '',
-        motherSecondLastname: excelData[16] || '',
-        motherBirthdate: excelData[17] ? new Date((excelData[17] - 25569) * 86400 * 1000) : null,
-        motherBirthCountry: excelData[18] || '',
-        motherBirthDepartment: excelData[19] || '',
-        motherBirthCity: excelData[20] || ''
+        fatherBirthdate: excelData[7] ? new Date((excelData[7] - 25569) * 86400 * 1000) : null,
+        fatherBirthCountry: excelData[9] || '',
+        fatherBirthDepartment: excelData[10] || '',
+        fatherBirthCity: excelData[11] || '',
+        motherDocumentType: excelData[12] || '',
+        motherDocumentNumber: excelData[13] || '',
+        motherFirstName: excelData[14] || '',
+        motherSecondName: excelData[15] || '',
+        motherFirstLastname: excelData[16] || '',
+        motherSecondLastname: excelData[17] || '',
+        motherBirthdate: excelData[19] ? new Date((excelData[19] - 25569) * 86400 * 1000) : null,
+        motherBirthCountry: excelData[21] || '',
+        motherBirthDepartment: excelData[22] || '',
+        motherBirthCity: excelData[23] || ''
     };
     return parent;
 };
