@@ -5,12 +5,12 @@ const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
 const processExcelData =  (excelData) => {
     const socialInformation = {
         groupEthnicity: excelData[1] || '',
-        beneficiarySisbenized: excelData[2] === '_SI',
-        sisbenScore: excelData[3] === '_SI',
-        belongsToFamiliesInAction: excelData[4] === '_SI',
-        directlyAffectedByArmedConflict: excelData[5] === '_SI',
+        beneficiarySisbenized: excelData[2] === 'SI_',
+        sisbenScore: excelData[3] || '',
+        belongsToFamiliesInAction: excelData[4] === 'SI_',
+        directlyAffectedByArmedConflict: excelData[5] === 'SI_',
         focusingCriteria: excelData[6] || '',
-        justificationDocumentExists: excelData[7] === '_SI'
+        justificationDocumentExists: excelData[7] === 'SI_'
     };
     return socialInformation;
 };
