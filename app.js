@@ -7,9 +7,9 @@ const cors =  require('cors')
 
 // prueba.getFoodCant('GESTANTES LACTANTES');
 
-// const prueba = require('./export/index');
+const prueba = require('./export/index');
 
-// prueba.prueba('./export/upload/prueba.xlsx')
+prueba.prueba('./export/utils/prueba.xlsx')
 
 //Definicion del servidor
 const app = express();
