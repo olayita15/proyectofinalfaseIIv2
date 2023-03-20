@@ -3,7 +3,6 @@ const Beneficiary = require('../../../models/beneficiaries');
 
 const { getBasicInfo, getBeneficiaryByNumDoc, editBeneficiaryBasicInfo } = require('../../../controllers/beneficiaries/basicinfoController');
 
-// chris
 // Endpoint Get all Beneficiaries basicinfo
 router.get('/', getBasicInfo);
 
