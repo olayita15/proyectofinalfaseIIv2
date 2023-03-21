@@ -22,14 +22,16 @@ const beneficiarySchema = new Schema({
     parent: {type: parentSchema, required: false},
     guardianInfo: {type: guardianSchema},
     disabilityInfo: disabilityInfoSchema
+<<<<<<< HEAD
     
+=======
+>>>>>>> main
 },
 {
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
-    
+    validateBeforeSave: true 
 });
-
 
 const beneficiary = mongoose.model('beneficiary', beneficiarySchema);
 
