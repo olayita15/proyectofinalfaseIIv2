@@ -25,6 +25,7 @@ function readFunction(startCol, endCol, row) {
 
   for (col = startCol; col <= endCol; col++) {
     const cellValue = sheet[xlsx.utils.encode_cell({r: row, c: col})];
+    // console.log(cellValue);
     if (cellValue && cellValue.t !== 'z' && cellValue.t !== 'e') {
       data.push(cellValue.v);
     } else {

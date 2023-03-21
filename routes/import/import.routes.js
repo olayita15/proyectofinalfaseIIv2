@@ -4,7 +4,7 @@ const saveData = require('../../import/saveData');
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
-        await saveData('./import/download/beneficiariesBD.xls');
+        await saveData('./import/download/beneficiariesBDreal.xlsm');
         res.status(200).send('Datos importados correctamente');
     } catch (error) {
     console.log(error)

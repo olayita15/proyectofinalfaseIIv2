@@ -11,13 +11,13 @@ const beneficiary = require('./beneficiary');
 
 const compileInfo = (row) =>{
     basicinfo(row);
-    /*disabilityInfo(row);
+    disabilityInfo(row);
     parent(row);
-    residencyInformation(row);*/
+    residencyInformation(row);
     health(row);
-   /* socialInformation(row);*/
+    socialInformation(row);
     assitanceInformation(row);
-    /* birthinformation(row);*/
+    birthinformation(row);
     guardian(row);
 }
 
