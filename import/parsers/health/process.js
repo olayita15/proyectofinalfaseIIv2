@@ -1,27 +1,30 @@
 // const data = require('./read');
 const mongoose = require('mongoose')
-const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
+const health = require('../../../models/beneficiaries/healthSchema');
 
 const processExcelData =  (excelData) => {
-    const basicInfo = {
-        numDoc: excelData[0] ? excelData[0].toString() : '',
-        curState: excelData[1] === 'ACTIVO',
-        joinDate: excelData[2] ? new Date((excelData[2] - 25569) * 86400 * 1000) : null,
-        exitDate: excelData[3] ? new Date((excelData[3] - 25569) * 86400 * 1000) : null,
-        enterBy: excelData[4] || '',
-        reasonForExit: excelData[5] || '',
-        otherExitReason: excelData[6] || '',
-        unityName: excelData[7] || '',
-        duoName: excelData[8] || '',
-        teachers: excelData[9] ? excelData[9].split(',') : [],
-        documentType: excelData[10] || '',
-        firstName: excelData[11] || '',
-        secondName: excelData[12] || '',
-        firstLastName: excelData[13] || '',
-        secondLastName: excelData[14] || '',
-        gender: excelData[15] || ''
+    const healthInfo = {
+        regime: excelData[1] || '',
+        eps: excelData[2] || '',
+        hasVaccinationCard: excelData[3] === 'SI',
+        vaccinationVerificationDate: excelData[4] ? new Date((excelData[4] - 25569) * 86400 * 1000) : null,
+        vaccinationCardUpToDate: excelData[5] === 'SI',
+        hasGrowthAndDevelopmentCard: excelData[6] === 'SI',
+        growthDevelopmentControlsReceived: excelData[7] || 0,
+        prematurenessBackground: excelData[7] === 'SI',
+        under40Weeks: excelData[9] === 'SI',
+        cefalicProfile: excelData[10] || '',
+        gestationalAgeAtBirth: excelData[11] || 0,
+        weightAtBirth: excelData[12] || 0,
+        heightAtBirth: excelData[13] || 0,
+        exclusivelyBreastfeeding: excelData[14] === 'SI',
+        exclusiveBreastfeedingDuration: excelData[14] || 0,
+        totalBreastfeedingDuration: excelData[15] || 0,
+        gestationWeeks: excelData[16] || 0,
+        ticketNumber: excelData[17] || ''
+        
     };
-    return basicInfo;
+    return healthInfo;
 };
 
 module.exports = processExcelData;

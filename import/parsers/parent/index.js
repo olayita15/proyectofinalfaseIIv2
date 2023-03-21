@@ -1,11 +1,11 @@
 const read = require('./read');
 const procesar = require('./process');
-const saveBasicInfo = require('./save');
+const saveParent = require('./save');
 
 const importFunction = (row) => {
     const data =  read(row);
     const processData = procesar(data);
-    const saveData = saveBasicInfo(processData);
+    const saveData = saveParent(processData);
     return saveData;
 };
 

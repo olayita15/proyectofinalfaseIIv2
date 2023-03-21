@@ -1,9 +1,8 @@
 const readFunction = require('../controllers/readFunction');
-
+//D
 const readBasicInfo = (row)=>{
-    const firstData = readFunction('0', '14', row);
-    const secondData = readFunction('21', '22', row);
-    firstData.push(secondData[1]);
+    const firstData = readFunction('31', '37', row);
+    
     return firstData;
 };
 

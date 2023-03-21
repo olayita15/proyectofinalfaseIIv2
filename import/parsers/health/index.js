@@ -4,9 +4,10 @@ const saveBasicInfo = require('./save');
 
 const importFunction = (row) => {
     const data =  read(row);
-    const processData = procesar(data);
-    const saveData = saveBasicInfo(processData);
-    return saveData;
+    console.log(data);
+    /*const processData = procesar(data);
+    const saveData = saveHealth(processData);
+    return saveData;*/
 };
 
 module.exports = importFunction;

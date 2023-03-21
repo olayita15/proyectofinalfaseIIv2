@@ -22,6 +22,7 @@ const beneficiarySchema = new Schema({
     parent: {type: parentSchema, required: false},
     guardianInfo: {type: guardianSchema},
     disabilityInfo: disabilityInfoSchema
+    
 },
 {
     toJSON: { virtuals: true },
