@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const health = require('../../../models/beneficiaries/healthSchema');
 
 const processExcelData =  (excelData) => {
-    const health = {
+    const healthInfo = {
         regime: excelData[1] || '',
         eps: excelData[2] || '',
         hasVaccinationCard: excelData[3] === 'SI',
@@ -24,7 +24,7 @@ const processExcelData =  (excelData) => {
         ticketNumber: excelData[17] || ''
         
     };
-    return health;
+    return healthInfo;
 };
 
 module.exports = processExcelData;

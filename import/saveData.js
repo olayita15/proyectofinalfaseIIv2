@@ -21,7 +21,7 @@ const saveBasicInfoData = async (path) => {
             };   
             // Si no existe, crea un nuevo registro
             const savedBeneficiary = await Beneficiary.create(beneficiary);
-            console.log('Datos insertados:', savedBeneficiary);
+            /*console.log('Datos insertados:', savedBeneficiary);*/
         } catch (error) {
             // Maneja el error si se produce alguna excepción durante el proceso
             console.log('Error:', error.message);

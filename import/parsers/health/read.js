@@ -1,8 +1,9 @@
 const readFunction = require('../controllers/readFunction');
 
-const readHealth = (row)=>{
-    const firstData = readFunction('90', '106', row);
+const readBasicInfo = (row)=>{
+    const firstData = readFunction('87', '106', row);
+    console.log(firstData);
     return firstData;
 };
 
-module.exports = readHealth;
+module.exports = readBasicInfo;
