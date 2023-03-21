@@ -21,8 +21,11 @@ const basicInfoSchema = new Schema({
 },
 {
     toJSON: { virtuals: true },
-    toObject: { virtuals: true }
+    toObject: { virtuals: true },
+    validateBeforeSave: true 
 });
+
+basicInfoSchema.index({ numDoc: 1 }, { unique: true });
 
 basicInfoSchema.virtual("fullName").get(function () {
   const { firstName, secondName, firstLastName, secondLastName } = this;
