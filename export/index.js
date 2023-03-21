@@ -2,8 +2,9 @@ const XlsxPopulate = require('xlsx-populate');
 const {editHeader} = require('./templates/header/index');
 const {getFoodNames} = require('./templates/content/market/getFoodNames');
 const {getNutricionalNames} = require('./templates/content/market/getNutricionalNames');
+const {getBeneficiary} = require('./templates/content/beneficiary/getBeneficiary');
 
-exports.prueba = async (pathFile, dataHeader) => {
+exports.exportExcel = async (pathFile, dataHeader) => {
 XlsxPopulate.fromFileAsync(pathFile)
   .then(async workbook => {
     // Obtener la hoja de cálculo y la celda
@@ -26,6 +27,11 @@ XlsxPopulate.fromFileAsync(pathFile)
       cell.value(NutricionalNames[index-21]);
     }
 
+    const beneficiary = await getBeneficiary('1023004072')
+    console.log(beneficiary[0].basicinfo.fullName)
+    console.log(beneficiary[0].basicinfo.numDoc)
+    console.log(beneficiary[0].basicinfo.joinDate)
+    
     // Guardar el archivo modificado
     workbook.toFileAsync('./export/upload/modificado.xlsx');
     // return workbook.toFileAsync('archivo_modificado.xlsx');
