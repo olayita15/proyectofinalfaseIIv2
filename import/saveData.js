@@ -35,7 +35,7 @@ const saveBasicInfoData = async (path) => {
 
 
 module.exports = saveBasicInfoData;
-
+/*module.exports = saveData;*/
 
 /*const saveBasicInfoData = (path) => {
 // const saveBasicInfoData = (path) => {
@@ -85,10 +85,10 @@ const saveData = async (path) => {
             failedBeneficiaries.push({ numDoc: beneficiary.basicinfo.numDoc, error: error.message });
         }
     }
-};*/
+};
     console.log('Todo ha sido un exito');
-    console.log(failedBeneficiaries);
+    console.log(failedBeneficiaries);*/
 
 
 
-module.exports = saveData;
+
