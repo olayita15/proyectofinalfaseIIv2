@@ -2,7 +2,10 @@
 const mongoose = require('mongoose')
 const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
 
+
 const processExcelData =  (excelData) => {
+    /*console.log(excelData[2]);
+    console.log(excelData[3]);*/
     const basicInfo = {
         numDoc: excelData[0] ? excelData[0].toString() : '',
         curState: excelData[1] === 'ACTIVO',
@@ -21,6 +24,8 @@ const processExcelData =  (excelData) => {
         secondLastName: excelData[14] || '',
         gender: excelData[15] || ''
     };
+    /*console.log(excelData[2]);
+    console.log(excelData[3]);*/
     return basicInfo;
 };
 

@@ -8,9 +8,8 @@ const processExcelData =  (excelData) => {
     birthCountry: excelData[1] || '',
     birthDepartment: excelData[2] || '',
     birthMunicipality: excelData[3] || '',
-    birthDate: excelData[4] ? new Date((excelData[4] - 25569) * 86400 * 1000) : null
+    birthDate: excelData[4] ? new Date((excelData[4].trim() - 25569) * 86400 * 1000) : null
     };
-    
     return birthinformation;
 };
 

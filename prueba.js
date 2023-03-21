@@ -1,4 +1,4 @@
-const prueba = require('./export/index');
+/*const prueba = require('./export/index');
 
 const datos = {
     regional_ciudad: 'Bogotá',
@@ -13,4 +13,10 @@ const datos = {
     codigo_punto_entrega: ''
 }
 // prueba.prueba('./export/upload/excelExport.xlsx','./export/upload/excelExport-copy.xlsx', data);
-prueba.prueba('./export/upload/prueba.xlsx', datos);
+prueba.prueba('./export/upload/prueba.xlsx', datos);*/
+
+const prueba = require('./import/parsers/index.js');
+const {globalVars, initGlobalVars} = require('./import/parsers/controllers/globalConst.js');
+
+initGlobalVars('./import/download/beneficiariesBD.xls');
+prueba(7);

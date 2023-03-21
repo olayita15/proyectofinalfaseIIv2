@@ -4,7 +4,7 @@ const calculateAge = require('./controller/calculateAge');
 
 const parentSchema = new Schema({
   fatherDocumentType: { type: String },
-  fatherDocumentNumber: { type: Number },
+  fatherDocumentNumber: { type: String },
   fatherFirstName: { type: String },
   fatherSecondName: { type: String },
   fatherFirstLastname: { type: String },
@@ -14,7 +14,7 @@ const parentSchema = new Schema({
   fatherBirthDepartment: { type: String },
   fatherBirthCity: { type: String },
   motherDocumentType: { type: String },
-  motherDocumentNumber: { type: Number },
+  motherDocumentNumber: { type: String },
   motherFirstName: { type: String },
   motherSecondName: { type: String },
   motherFirstLastname: { type: String },

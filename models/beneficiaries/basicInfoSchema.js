@@ -3,21 +3,21 @@ const { Schema } = mongoose;
 
 const basicInfoSchema = new Schema({
   numDoc: { type: String, unique: true, required: true },
-  curState: { type: Boolean, required: true },
-  joinDate: { type: Date, required: true },
+  curState: { type: Boolean, },
+  joinDate: { type: Date,  },
   exitDate: { type: Date },
   enterBy: { type: String },
   reasonForExit: { type: String },
   otherExitReason: { type: String },
-  unityName: { type: String, required: true },
-  duoName: { type: String, required: true },
+  unityName: { type: String,  },
+  duoName: { type: String,  },
   teachers: { type: [String]},
-  documentType: { type: String, required: true },
-  firstName: { type: String, required: true },
+  documentType: { type: String, },
+  firstName: { type: String,  },
   secondName: { type: String },
-  firstLastName: { type: String, required: true },
+  firstLastName: { type: String, },
   secondLastName: { type: String },
-  gender: { type: String, enum: ['MASCULINO','FEMENINO'], required: true }
+  gender: { type: String, enum: ['MASCULINO','FEMENINO'],  }
 },
 {
     toJSON: { virtuals: true },

@@ -4,12 +4,12 @@ const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
 
 const processExcelData =  (excelData) => {
     const assitanceInformation = {
-    requiresAssistance: excelData[0] === 'ACTIVO',
-    requiresTechSupport: excelData[1] === 'ACTIVO',
-    hasTechSupport: excelData[2] === 'ACTIVO',
-    requiresTherapy: excelData[3] === 'ACTIVO',
-    receivesTherapy: excelData[4] === 'ACTIVO',
-    hasInterdictionProcess: excelData[5] === 'ACTIVO'
+    requiresAssistance: excelData[1] === 'SI_',
+    requiresTechSupport: excelData[2] === 'SI_',
+    hasTechSupport: excelData[3] === 'SI_',
+    requiresTherapy: excelData[4] === 'SI_',
+    receivesTherapy: excelData[5] === 'SI_',
+    hasInterdictionProcess: excelData[6] === 'SI_'
     };
 
     return assitanceInformation;

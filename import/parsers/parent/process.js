@@ -1,27 +1,33 @@
-// const data = require('./read');
+//const data = require('./read');
 const mongoose = require('mongoose')
-const BasicInfo = require('../../../models/beneficiaries/basicInfoSchema');
+const BasicInfo = require('../../../models/beneficiaries/parentSchema');
 
 const processExcelData =  (excelData) => {
-    const basicInfo = {
-        numDoc: excelData[0] ? excelData[0].toString() : '',
-        curState: excelData[1] === 'ACTIVO',
-        joinDate: excelData[2] ? new Date((excelData[2] - 25569) * 86400 * 1000) : null,
-        exitDate: excelData[3] ? new Date((excelData[3] - 25569) * 86400 * 1000) : null,
-        enterBy: excelData[4] || '',
-        reasonForExit: excelData[5] || '',
-        otherExitReason: excelData[6] || '',
-        unityName: excelData[7] || '',
-        duoName: excelData[8] || '',
-        teachers: excelData[9] ? excelData[9].split(',') : [],
-        documentType: excelData[10] || '',
-        firstName: excelData[11] || '',
-        secondName: excelData[12] || '',
-        firstLastName: excelData[13] || '',
-        secondLastName: excelData[14] || '',
-        gender: excelData[15] || ''
+    /*console.log(excelData[18]);
+    console.log(excelData[19]);*/
+    const parent = {
+        fatherDocumentType: excelData[1] || '',
+        fatherDocumentNumber: excelData[2] || '',
+        fatherFirstName: excelData[3] || '',
+        fatherSecondName: excelData[4] || '',
+        fatherFirstLastname: excelData[5] || '',
+        fatherSecondLastname: excelData[6] || '',
+        fatherBirthdate: excelData[7] ? new Date((excelData[7] - 25569) * 86400 * 1000) : null,
+        fatherBirthCountry: excelData[9] || '',
+        fatherBirthDepartment: excelData[10] || '',
+        fatherBirthCity: excelData[11] || '',
+        motherDocumentType: excelData[12] || '',
+        motherDocumentNumber: excelData[13] || '',
+        motherFirstName: excelData[14] || '',
+        motherSecondName: excelData[15] || '',
+        motherFirstLastname: excelData[16] || '',
+        motherSecondLastname: excelData[17] || '',
+        motherBirthdate: excelData[19] ? new Date((excelData[19] - 25569) * 86400 * 1000) : null,
+        motherBirthCountry: excelData[21] || '',
+        motherBirthDepartment: excelData[22] || '',
+        motherBirthCity: excelData[23] || ''
     };
-    return basicInfo;
+    return parent;
 };
 
 module.exports = processExcelData;
