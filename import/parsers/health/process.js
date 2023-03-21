@@ -1,6 +1,6 @@
 // const data = require('./read');
 const mongoose = require('mongoose')
-const health = require('../../../models/beneficiaries/healthSchema');
+const healthInfo = require('../../../models/beneficiaries/healthSchema');
 
 const processExcelData =  (excelData) => {
     const healthInfo = {

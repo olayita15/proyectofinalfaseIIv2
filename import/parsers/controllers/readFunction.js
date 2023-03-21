@@ -18,7 +18,7 @@ const { globalVars } = require('./globalConst')
 //   return datos;
 // };
 
-function readFunction(startCol, endCol, row) {
+/*function readFunction(startCol, endCol, row) {
   const sheet = globalVars.sheet;
   const data = [];
   let col;
@@ -32,5 +32,21 @@ function readFunction(startCol, endCol, row) {
     }    
   }
   return data;
+};*/
+function readFunction(startCol, endCol, row) {
+  const sheet = globalVars.sheet;
+  const data = [];
+  let col;
+
+  for (col = startCol; col <= endCol; col++) {
+    const cellValue = sheet[xlsx.utils.encode_cell({r: row, c: xlsx.utils.encode_col(col)})];
+    if (cellValue && cellValue.t !== 'z' && cellValue.t !== 'e') {
+      data.push(cellValue.v);
+    } else {
+      data.push(null);
+    }    
+  }
+  return data;
 };
 module.exports = readFunction;
+

@@ -2,7 +2,7 @@ const basicinfo = require('./basicInfo/index');
 const disabilityInfo = require('./disabilityInfo/index');
 const parent = require('./parent/index');
 const residencyInformation = require('./residencyInformation/index');
-const health = require('./health/index');
+const healthInfo = require('./health/index');
 const socialInformation = require('./socialInformation/index')
 const assitanceInformation = require('./assitanceInformation/index')
 const birthinformation = require('./birthinformation/index')
@@ -14,11 +14,11 @@ const compileInfo = (row) =>{
     /*disabilityInfo(row);
     parent(row);
     residencyInformation(row);*/
-    health(row);
+    healthInfo(row);
    /* socialInformation(row);*/
-    assitanceInformation(row);
+    /*assitanceInformation(row);*/
     /* birthinformation(row);*/
-    guardian(row);
+    /*guardian(row);*/
 }
 
 module.exports = compileInfo;
