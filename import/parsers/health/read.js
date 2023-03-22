@@ -1,8 +1,7 @@
 const readFunction = require('../controllers/readFunction');
 
 const readBasicInfo = (row)=>{
-    const firstData = readFunction('89', '100', row);
-    console.log(firstData);
+    const firstData = readFunction(88, 105, row);
     return firstData;
 };
 

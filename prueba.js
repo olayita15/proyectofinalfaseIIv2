@@ -1,3 +1,6 @@
+const prueba = require('./export/templates/content/getFoodNames');
+
+prueba.prueba();
 /*const prueba = require('./export/index');
 
 const datos = {

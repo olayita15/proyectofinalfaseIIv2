@@ -8,6 +8,12 @@
 ~$beneficiariesBD.xls
 beneficiariesBD.xls
 
+import/download/beneficiariesBDreal.xlsm
 /download
 
 /upload
+
+.xlsx
+
+export/upload
+export/utils

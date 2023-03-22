@@ -1,7 +1,7 @@
 const Beneficiary = require('../beneficiary');
 
-const saveBasicInfo = (assitanceInformation)=>{
-    Object.assign(Beneficiary, {assitanceInformation});
+const saveBasicInfo = (assistanceInformation)=>{
+    Object.assign(Beneficiary, {assistanceInformation});
     return Beneficiary;
 };
 
