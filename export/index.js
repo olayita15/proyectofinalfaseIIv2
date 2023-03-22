@@ -27,12 +27,16 @@ XlsxPopulate.fromFileAsync(pathFile)
       cell.value(NutricionalNames[index-21]);
     }
 
-    const beneficiary = await getBeneficiary('1023004072')
+    const beneficiary = await getBeneficiary('1012926906')
+    
     console.log(beneficiary[0].basicinfo.fullName)
     console.log(beneficiary[0].basicinfo.numDoc)
     console.log(beneficiary[0].basicinfo.joinDate)
+    console.log(beneficiary[0].typeComplement)
+    console.log(beneficiary[0].typeBeneficiary)
+
     
-    // Guardar el archivo modificado
+    // Guardar el archivo modificado 
     workbook.toFileAsync('./export/upload/modificado.xlsx');
     // return workbook.toFileAsync('archivo_modificado.xlsx');
   })

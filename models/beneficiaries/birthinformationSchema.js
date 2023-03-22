@@ -45,11 +45,4 @@ birthInfoSchema.virtual("totalAge").get(function () {
     return yearString + monthString + dayString;
 });
 
-birthInfoSchema.virtual('typeComplement').get(function(){
-    const birthDate = new Date(this.birthDate);
-    console.log(birthDate);
-    const typeComplement = calculateComplement(birthDate);
-    return typeComplement
-  });
-
 module.exports = birthInfoSchema;

@@ -4,7 +4,6 @@ const calculateAge = require('./calculateAge');
 
 function calculateComplement(birthDate) {
     const age =calculateAge(birthDate);
-    console.log(age);
     if (age.years === 0 && age.months < 6) {
       return "M. GESTANTE Y MADRES LACTANTES (MENOR DE 6 MESES)";
     } else if (age.years < 1 && age.months > 6) {
