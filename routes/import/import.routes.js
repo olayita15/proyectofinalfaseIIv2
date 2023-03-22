@@ -1,15 +1,26 @@
 const router = require("express").Router();
 const saveData = require('../../import/saveData');
+const fs = require('fs').promises;
+const path = require('path');
 
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
-        console.log(req.body.path)
-        await saveData(req.body.path);
+        // Guarda el archivo temporalmente en el servidor
+        const file = req.files.file;
+        const filePath = path.join(__dirname, 'temp', file.name);
+        await fs.writeFile(filePath, file.data);
+
+        // Utiliza la función saveData con la ruta del archivo temporal
+        await saveData(filePath);
+
+        // Borra el archivo temporal del servidor
+        await fs.unlink(filePath);
+
         res.status(200).send('Datos importados correctamente');
     } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: error.message });
+        console.log(error)
+        res.status(500).json({ message: error.message });
     }
 });
 
