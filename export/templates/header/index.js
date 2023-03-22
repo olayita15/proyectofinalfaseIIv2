@@ -24,7 +24,7 @@ exports.editHeader = (data) => {
     texto = texto.replace('alienacion', data.mes_entrega);
     texto = texto.replace('ideologia', data.unidad);
     texto = texto.replace('vanguardia', data.dupla);
-    texto = texto.replace('enajenacion', data.codigo_punto_entrega);
+    texto = texto.replace('enajenacion', data.direccion_punto_entrega);
     texto = texto.replace('reificacion', data.codigo_punto_entrega);
 
     return texto;

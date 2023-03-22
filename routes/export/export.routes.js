@@ -4,7 +4,8 @@ const {exportExcel} = require('../../export/index');
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
     try {
-        await exportExcel('./export/utils/prueba.xlsx');
+        console.log(req.body);
+        await exportExcel('./export/utils/prueba.xlsx', req.body);
         res.status(200).send('Datos exportados correctamente');
     } catch (error) {
     console.log(error)

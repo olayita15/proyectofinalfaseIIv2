@@ -6,6 +6,5 @@ exports.getFoodCant = async (type)=>{
     for (let index = 0; index < market[0].foodsToPrepare.length; index++) {
         names.push(market[0].foodsToPrepare[index].quantity);
     }
-    console.log(names);
     return names;
 };
