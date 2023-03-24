@@ -2,12 +2,14 @@ const Beneficiary = require('../models/beneficiaries');
 const beneficiary = require('./parsers/beneficiary');
 const index = require('./parsers/index');
 const { initGlobalVars, globalVars } = require('./parsers/controllers/globalConst');
+const { io } = require('../server');
 
-const saveBasicInfoData = async (path) => {
+var percent = '';
+const saveData = async (path) => {
     initGlobalVars(path);
     let failedBeneficiaries = [];
     const totalRows = globalVars.lastRow - globalVars.row;
-    let percent = '';
+    
     for (let row = globalVars.row; row <= globalVars.lastRow-1; row++){
         index(row);
         try {
@@ -26,13 +28,14 @@ const saveBasicInfoData = async (path) => {
 
         // Calcular y mostrar porcentaje completado
         const percentCompleted = ((row - globalVars.row) / totalRows) * 100;
-        percent = `${percentCompleted.toFixed(1)}%`
+        percent = `${percentCompleted.toFixed(1)}%`;
+        // io.on("connection", (socket) => {
+        //     socket.emit("import-progress", { percent });
+        // });
         console.log(percent)
     }
     console.log('Todo ha sido un exito');
     console.log(failedBeneficiaries);
-    return percent;
-    
 };
 
-module.exports = saveBasicInfoData;
+module.exports = {saveData, percent};
