@@ -38,7 +38,7 @@ async function updateParentInformationByNumDoc(req, res) {
       updates[`parent.${field}`] = req.body[field];
     }
     await beneficiary.updateOne({ $set: updates });
-    const updatedBeneficiary = await Beneficiary.findOne({ "basicinfo.numDoc": numDoc }, { parent: 1 });
+    const updatedBeneficiary = await Beneficiary.findOne({ "basicinfo.numDoc": numDoc }, { parent: 1 }).lean();
     res.json(updatedBeneficiary);
   } catch (error) {
     console.log(error);

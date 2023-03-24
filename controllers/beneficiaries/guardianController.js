@@ -17,7 +17,7 @@ exports.getGuardianByNumDoc = async (req, res) => {
         if (!beneficiary) {
             return res.status(404).json({ message: "Beneficiary not found" });
         }
-        const { guardianInfo} = beneficiary;
+        const { guardianInfo } = beneficiary;
         res.json(guardianInfo);
     } catch (error) {
         console.log(error);

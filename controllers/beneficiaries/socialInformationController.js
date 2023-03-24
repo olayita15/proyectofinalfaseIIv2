@@ -1,8 +1,8 @@
-const socialInformation = require('../../models/beneficiaries');
+const Beneficiary = require('../../models/beneficiaries');
 
 const getAllSocialInformation = async (req, res) => {
     try {
-        const socialInformationRes = await socialInformation.find({},{socialInformation:1});
+        const socialInformationRes = await Beneficiary.find({},{socialInformation:1});
         res.json(socialInformationRes);
     } catch (err) {
         console.error(err);
@@ -13,7 +13,7 @@ const getAllSocialInformation = async (req, res) => {
 const getSocialInformationByNumDoc = async (req, res) => {
     try {
         const numDoc = req.params.numDoc;
-        const socialInformation = await socialInformation.find({ 'socialInformation.numDoc': numDoc });
+        const socialInformation = await Beneficiary.find({ 'basicinfo.numDoc': numDoc },{socialInformation:1}).lean();
         if (!socialInformation) {
             return res.status(404).json({ message: "Social Information not found" });
         }
@@ -27,7 +27,7 @@ const getSocialInformationByNumDoc = async (req, res) => {
 const updateSocialInformationByNumDoc = async (req, res) => {
     try {
         const numDoc = req.params.numDoc;
-        const socialInformation = await socialInformation.findOne({ "socialInformation.numDoc": numDoc },{socialInformation:1});
+        const socialInformation = await Beneficiary.findOne({ "basicinfo.numDoc": numDoc },{socialInformation:1});
         if (!socialInformation) {
             return res.status(404).json({ message: "Social Information not found" });
         }
@@ -36,8 +36,8 @@ const updateSocialInformationByNumDoc = async (req, res) => {
             console.log(field)
             updates[`socialInformation.${field}`] = req.body[field];
         }
-        await residencyInformation.updateOne({ $set: updates });
-        const updatedSocialInformation = await socialInformation.findOne({ "socialInformation.numDoc": numDoc },{socialInformation:1});
+        await socialInformation.updateOne({ $set: updates });
+        const updatedSocialInformation = await Beneficiary.findOne({ "basicinfo.numDoc": numDoc },{socialInformation:1}).lean();
         res.json(updatedSocialInformation);
     } catch (error) {
         console.log(error);
