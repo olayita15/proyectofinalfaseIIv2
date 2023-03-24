@@ -7,15 +7,8 @@ const calculateComplement = require('./controller/calculateComplement');
 
 
 const birthInfoSchema = new Schema({
-    birthCountry: { type: String, enum: ['COLOMBIA','VENEZUELA','PERU','ECUADOR','PANAMA','BRASIL'],  },
-    birthDepartment:{ type: String, enum: ['AMAZONAS','ANTIOQUIA','ARAUCA','ATLANTICO','BOGOTA','BOLIVAR',
-    'BOYACA','CALDAS','CAQUETA','CASANARE',
-    'CAUCA','CESAR','CHOCO',
-    'CORDOBA','CUNDINAMARCA','ESPECIALES',
-    'GUANIA','GUAVIARE','HUILA','LA_GUAJIRA','MAGDALENA',
-    'META','NARIÑO','NORTEDESANTANDER','PUTUMAYO','QUINDIO',
-    'RISARALDA','SANANDRESYPROVIDENCIA','SANTANDER','SUCRE',
-    'TOLIMA','VALLEDELCAUCA','VAUPES','VICHADA'],  },
+    birthCountry: { type: String },
+    birthDepartment:{ type: String },
     birthMunicipality: { type: String },
     birthDate: { type: Date }
 },

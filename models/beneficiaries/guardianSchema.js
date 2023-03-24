@@ -12,15 +12,8 @@ const guardianSchema = new Schema({
   guardianFirstLastName: { type: String },
   guardianSecondLastName: { type: String }, 
   guardianBirthDate: { type: Date },
-  guardianBirthCountry:{ type: String, enum: ['COLOMBIA','VENEZUELA','PERU','ECUADOR','PANAMA','BRASIL'],  },
-  guardianBirthDepartment: { type: String, enum: ['AMAZONAS','ANTIOQUIA','ARAUCA','ATLANTICO','BOGOTA','BOLIVAR',
-  'BOYACA','CALDAS','CAQUETA','CASANARE',
-  'CAUCA','CESAR','CHOCO',
-  'CORDOBA','CUNDINAMARCA','ESPECIALES',
-  'GUANIA','GUAVIARE','HUILA','LA_GUAJIRA','MAGDALENA',
-  'META','NARIÑO','NORTEDESANTANDER','PUTUMAYO','QUINDIO',
-  'RISARALDA','SANANDRESYPROVIDENCIA','SANTANDER','SUCRE',
-  'TOLIMA','VALLEDELCAUCA','VAUPES','VICHADA'],  },
+  guardianBirthCountry:{ type: String },
+  guardianBirthDepartment:{ type: String },
   guardianBirthCity: { type: String }
 });
 
