@@ -3,14 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors =  require('cors');
 
-// const prueba = require('./export/templates/content/market/getFoodCant');
-
-// prueba.getFoodCant('GESTANTES LACTANTES');
-
-// const prueba = require('./export/index');
-
-// prueba.prueba('./export/utils/prueba.xlsx')
-
 //Definicion del servidor
 const app = express();
 app.use(express.json());
@@ -26,6 +18,7 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`servidor andando en: ${PORT}`)
 });
+
 
 // mongo db conection
 mongoose.connect(process.env.URL,
