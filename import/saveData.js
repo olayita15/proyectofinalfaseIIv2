@@ -2,7 +2,7 @@ const Beneficiary = require('../models/beneficiaries');
 const beneficiary = require('./parsers/beneficiary');
 const index = require('./parsers/index');
 const { initGlobalVars, globalVars } = require('./parsers/controllers/globalConst');
-const { io } = require('../server');
+
 
 var percent = '';
 const saveData = async (path) => {

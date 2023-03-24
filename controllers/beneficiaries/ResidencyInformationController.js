@@ -1,8 +1,8 @@
-const residencyInformation = require('../../models/beneficiaries');
+const Beneficiary = require('../../models/beneficiaries');
 
 exports.getAllResidencyInformation = async (req, res) => {
   try{
-      const residencyInformationRes = await residencyInformation.find({},{residencyInformation:1});
+      const residencyInformationRes = await Beneficiary.find({},{residencyInformation:1});
       res.json(residencyInformationRes);
   } catch(err) {
       console.error(err);
@@ -13,11 +13,11 @@ exports.getAllResidencyInformation = async (req, res) => {
 exports.getResidencyInformationByNumDoc = async (req, res) => {
   try{
       const numDoc = req.params.numDoc;
-      const beneficiaryLocation = await residencyInformation.find({ 'residencyInformation.numDoc': numDoc });
-      if (!beneficiaryLocation) {
+      const beneficiary = await Beneficiary.findOne({ 'basicinfo.numDoc': numDoc }, {residencyInformation:1}).lean();
+      if (!beneficiary) {
         return res.status(404).json({ message: "Location beneficiary not found" });
       }
-      res.json(beneficiaryLocation);
+      res.json(beneficiary);
   } catch(err) {
       console.error(err);
       res.status(500).json({message: err.message});
@@ -27,20 +27,19 @@ exports.getResidencyInformationByNumDoc = async (req, res) => {
 exports.updateResidencyInformationByNumDoc = async (req, res) => {
   try {
     const numDoc = req.params.numDoc;
-    const residencyInformation = await residencyInformation.findOne({ "residencyInformation.numDoc": numDoc },{residencyInformation:1});
-    if (!residencyInformation) {
-        return res.status(404).json({ message: "Residency Information not found" });
+    const beneficiary = await Beneficiary.findOne({ 'basicinfo.numDoc': numDoc },{residencyInformation:1});
+    if (!beneficiary) {
+        return res.status(404).json({ message: "Beneficiary not found" });
     }
     const updates = {};
     for (const field in req.body) {
-        console.log(field)
-        updates[`basicinfo.${field}`] = req.body[field];
+        updates[`residencyInformation.${field}`] = req.body[field];
     }
-    await residencyInformation.updateOne({ $set: updates });
-    const updatedResidencyInformation = await residencyInformation.findOne({ "residencyInformation.numDoc": numDoc },{residencyInformation:1});
-    res.json(updatedResidencyInformation);
+    await beneficiary.updateOne({ $set: updates });
+    const updatedBeneficiary = await Beneficiary.findOne({ "basicinfo.numDoc": numDoc },{residencyInformation:1}).lean();
+    res.json(updatedBeneficiary);
   } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: error.message });
+    console.log(error);
+    res.status(500).json({ message: error.message });
   }
 };
