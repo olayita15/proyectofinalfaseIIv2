@@ -1,5 +1,15 @@
 const Market = require('../../models/market/marketSchema');
 
+exports.getAllMarkets = async (req, res) => {
+    try {
+        const marketsRes = await Market.find();
+        res.json(marketsRes);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ message: error.message });
+    }
+};
+
 exports.getMarketByType = async (req, res) => {
     try {
         const type = req.params.type;

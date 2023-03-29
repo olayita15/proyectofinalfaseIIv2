@@ -14,6 +14,7 @@ XlsxPopulate.fromFileAsync(pathFile)
     //Header
     let cell = worksheet.row(4).cell(1);
     const newHeader = editHeader(info.data)
+    console.log(newHeader);
     cell.value(newHeader);
     //Market Content
     for (let row = 0; row < info.beneficiaries.length; row++) {
@@ -66,9 +67,10 @@ XlsxPopulate.fromFileAsync(pathFile)
         cell = worksheet.row(row+10).cell(index);
         cell.value(NutricionalCant[index-21]);
       }
+      worksheet.name(marketBeneficiary);
     }
-
-    workbook.toFileAsync('./export/upload/modificado.xlsx');
+    
+    await workbook.toFileAsync('./export/upload/modificado.xlsx');
     // return workbook.toFileAsync('archivo_modificado.xlsx'); 
   })
   .catch(error => {

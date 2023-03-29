@@ -1,5 +1,5 @@
 exports.editHeader = (data) => {
-    var texto = `    REGIONAL: _______mercancia_________               CENTRO ZONAL: ____plusvalia____      MUNICIPIO: ______dialectica______  
+    let texto = `    REGIONAL: _______mercancia_________               CENTRO ZONAL: ____plusvalia____      MUNICIPIO: ______dialectica______  
 
     NOMBRE DE LA MODALIDAD: ______materialismo ________
     
