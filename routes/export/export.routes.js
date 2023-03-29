@@ -11,7 +11,7 @@ router.post("/", async (req, res)=>{
         await res.set('Expires', '-1');
         const filePath = 'C:/Users/EQUIPO01/Documents/Chris/proyectos/ProyectoFinalBackendFaseII/export/upload/modificado.xlsx';
         // Esperar a que se cree el archivo
-        await new Promise(resolve => setTimeout(resolve, 10000));
+        await new Promise(resolve => setTimeout(resolve, 20000));
         // Verificar que el archivo existe
         if (fs.existsSync(filePath)) {
             res.status(200).sendFile(filePath, () => {

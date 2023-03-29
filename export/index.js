@@ -67,8 +67,9 @@ XlsxPopulate.fromFileAsync(pathFile)
         cell = worksheet.row(row+10).cell(index);
         cell.value(NutricionalCant[index-21]);
       }
+      worksheet.name(marketBeneficiary);
     }
-
+    
     await workbook.toFileAsync('./export/upload/modificado.xlsx');
     // return workbook.toFileAsync('archivo_modificado.xlsx'); 
   })
