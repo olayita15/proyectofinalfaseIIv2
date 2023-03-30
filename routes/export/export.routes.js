@@ -7,7 +7,8 @@ const path = require('path');
 router.post("/", async (req, res)=>{
     try {
         console.log(req.body);
-        await exportExcel('./export/utils/prueba.xlsx', req.body);
+        const filePrueba = path.resolve(__dirname, '../../export/utils/prueba.xlsx');
+        await exportExcel(filePrueba, req.body);
         await res.set('Cache-Control', 'no-cache');
         await res.set('Expires', '-1');
         
