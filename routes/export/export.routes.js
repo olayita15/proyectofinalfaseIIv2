@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const {exportExcel} = require('../../export/index');
 const fs = require('fs');
+const path = require('path');
 
 // Endpoint Create Beneficiarie
 router.post("/", async (req, res)=>{
@@ -9,9 +10,11 @@ router.post("/", async (req, res)=>{
         await exportExcel('./export/utils/prueba.xlsx', req.body);
         await res.set('Cache-Control', 'no-cache');
         await res.set('Expires', '-1');
-        const filePath = 'C:/Users/EQUIPO01/Documents/Chris/proyectos/ProyectoFinalBackendFaseII/export/upload/modificado.xlsx';
+        
+        const filePath = path.resolve(__dirname, '../../export/upload/modificado.xlsx');
+
         // Esperar a que se cree el archivo
-        await new Promise(resolve => setTimeout(resolve, 20000));
+        await new Promise(resolve => setTimeout(resolve, 40000));
         // Verificar que el archivo existe
         if (fs.existsSync(filePath)) {
             res.status(200).sendFile(filePath, () => {
@@ -23,6 +26,7 @@ router.post("/", async (req, res)=>{
         }
     } catch (error) {
         console.log(error);
+        fs.unlink(filePath, () => {});
         res.status(500).json({ message: error.message });
     }
 });
