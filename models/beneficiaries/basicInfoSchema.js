@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const basicInfoSchema = new Schema({
-  numDoc: { type: String, unique: true, required: true, enum: ['RC','CC','TI','PEP','PASAPORTE','SINDOCUMENTO','ANM','PPT'],  },
+  numDoc: { type: String, unique: true, required: true },
   curState: { type: Boolean, default: false },
   joinDate: { type: Date,  },
   exitDate: { type: Date },
