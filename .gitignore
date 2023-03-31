@@ -8,6 +8,9 @@
 ~$beneficiariesBD.xls
 beneficiariesBD.xls
 
-import/download
+import/download/beneficiariesBDreal.xlsm
+/download
 
-/upload
+.xlsx
+
+export/upload/modificado.xlsx

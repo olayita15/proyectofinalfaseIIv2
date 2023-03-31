@@ -3,12 +3,12 @@ const { Schema } = mongoose;
 
 const healthSchema = new Schema({
   regime: { type: String, enum: ['SUBSIDIADO', 'CONTRIBUTIVO', 'ESPECIAL', 'NO_AFILIADO'], required: true },
-  eps: { type: String, required: true },
-  hasVaccinationCard: { type: Boolean, required: true },
+  eps: { type: String },
+  hasVaccinationCard: { type: Boolean },
   vaccinationVerificationDate: { type: Date },
   vaccinationCardUpToDate: { type: Boolean },
-  hasGrowthAndDevelopmentCard: { type: Boolean, required: true },
-  growthDevelopmentControlsReceived: { type: Number },
+  hasGrowthAndDevelopmentCard: { type: Boolean},
+  growthDevelopmentControlsReceived: { type: String },
   prematurenessBackground: { type: Boolean },
   under40Weeks: { type: Boolean },
   cefalicProfile: { type: String },

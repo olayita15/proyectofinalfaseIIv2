@@ -1,5 +1,5 @@
 exports.editHeader = (data) => {
-    var texto = `    REGIONAL: _______mercancia_________               CENTRO ZONAL: ____plusvalia____      MUNICIPIO: ______dialectica______  
+    let texto = `    REGIONAL: _______mercancia_________               CENTRO ZONAL: ____plusvalia____      MUNICIPIO: ______dialectica______  
 
     NOMBRE DE LA MODALIDAD: ______materialismo ________
     
@@ -24,7 +24,7 @@ exports.editHeader = (data) => {
     texto = texto.replace('alienacion', data.mes_entrega);
     texto = texto.replace('ideologia', data.unidad);
     texto = texto.replace('vanguardia', data.dupla);
-    texto = texto.replace('enajenacion', data.codigo_punto_entrega);
+    texto = texto.replace('enajenacion', data.direccion_punto_entrega);
     texto = texto.replace('reificacion', data.codigo_punto_entrega);
 
     return texto;

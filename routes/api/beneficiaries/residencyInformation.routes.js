@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const residencyInformationController = require('../../../controllers/beneficiaries/ResidencyInformationController');
+const ResidencyInformationController = require('../../../controllers/beneficiaries/ResidencyInformationController');
 
 // All information of the category - residency information
-router.get('/', residencyInformationController.getAllResidencyInformation);
+router.get('/', ResidencyInformationController.getAllResidencyInformation);
 
 //  The information of a beneficiary in the category social information
-router.get('/:numDoc', residencyInformationController.getResidencyInformationByNumDoc);
+router.get('/:numDoc', ResidencyInformationController.getResidencyInformationByNumDoc);
 
 //  updated information - residency information
-router.patch("/:numDoc", residencyInformationController.updateResidencyInformationByNumDoc);
+router.patch('/:numDoc', ResidencyInformationController.updateResidencyInformationByNumDoc);
 
 module.exports = router;
