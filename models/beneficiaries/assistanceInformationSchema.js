@@ -10,4 +10,4 @@ const AssistanceSchema = new Schema({
   hasInterdictionProcess: { type: Boolean, default: false }
 });
 
-module.exports = AssistanceSchema
+module.exports = AssistanceSchema;
