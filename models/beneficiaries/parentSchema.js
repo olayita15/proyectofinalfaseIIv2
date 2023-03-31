@@ -3,17 +3,17 @@ const { Schema } = mongoose;
 const calculateAge = require('./controller/calculateAge');
 
 const parentSchema = new Schema({
-  fatherDocumentType: { type: String },
+  fatherDocumentType: { type: String, enum: ['CC','TI','PEP','PASAPORTE','SINDOCUMENTO'],  },
   fatherDocumentNumber: { type: String },
   fatherFirstName: { type: String },
   fatherSecondName: { type: String },
   fatherFirstLastname: { type: String },
   fatherSecondLastname: { type: String },
   fatherBirthdate: { type: Date },
-  fatherBirthCountry: { type: String },
+  fatherBirthCountry:{ type: String },
   fatherBirthDepartment: { type: String },
   fatherBirthCity: { type: String },
-  motherDocumentType: { type: String },
+  motherDocumentType:{ type: String, enum: ['CC','TI','PEP','PASAPORTE','SINDOCUMENTO'],  },
   motherDocumentNumber: { type: String },
   motherFirstName: { type: String },
   motherSecondName: { type: String },
@@ -21,7 +21,7 @@ const parentSchema = new Schema({
   motherSecondLastname: { type: String },
   motherBirthdate: { type: Date },
   motherBirthCountry: { type: String },
-  motherBirthDepartment: { type: String },
+  motherBirthDepartment:{ type: String },
   motherBirthCity: { type: String },
 },
 {

@@ -6,7 +6,7 @@ moment().format();
 
 const birthInfoSchema = new Schema({
     birthCountry: { type: String },
-    birthDepartment: { type: String },
+    birthDepartment:{ type: String },
     birthMunicipality: { type: String },
     birthDate: { type: Date }
 },
