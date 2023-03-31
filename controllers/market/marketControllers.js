@@ -34,3 +34,16 @@ exports.createMarket = async (req, res) => {
     }
 };
 
+exports.updateMarketByType = async (req, res) => {
+    try {
+        const type = req.params.type;
+        const updatedMarket = await Market.findOneAndUpdate({ type: type }, req.body, { new: true });
+        if (!updatedMarket) {
+            return res.status(404).json({ message: 'Market not found' });
+        }
+        res.json(updatedMarket);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
+};
