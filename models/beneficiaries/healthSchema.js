@@ -5,7 +5,7 @@ const healthSchema = new Schema({
   regime: { type: String, enum: ['SUBSIDIADO', 'CONTRIBUTIVO', 'ESPECIAL', 'NO_AFILIADO'], required: true },
   eps: { type: String },
   hasVaccinationCard: {type: Boolean, default: false},
-  vaccinationVerificationDate: { type: Boolean, default: false},
+  vaccinationVerificationDate: { type: Date, default: false},
   vaccinationCardUpToDate: {type: Boolean, default: false},
   hasGrowthAndDevelopmentCard: {type: Boolean, default: false},
   growthDevelopmentControlsReceived: { type: String },

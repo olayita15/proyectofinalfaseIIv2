@@ -17,7 +17,7 @@ const guardianSchema = require('./beneficiaries/guardianSchema');
 
 
 const beneficiarySchema = new Schema({
-    basicinfo: {type: basicInfoSchema, virtual:true/* required: false */},
+    basicinfo: {type: basicInfoSchema, virtual:true,  required: true },
     birthinformation: birthInfoSchema,
     healthInfo: healthSchema,
     residencyInformation: residencyInformationSchema,

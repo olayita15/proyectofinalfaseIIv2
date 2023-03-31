@@ -20,7 +20,7 @@ const processExcelData =  (excelData) => {
         regime: excelData[1] || '',
         eps: excelData[2] || '',
         hasVaccinationCard: excelData[3] === 'SI_',
-        vaccinationVerificationDate: excelData[4] === 'SI_',
+        vaccinationVerificationDate: excelData[4] ? new Date((excelData[4] - 25569) * 86400 * 1000) : null,
         vaccinationCardUpToDate: excelData[5] === 'SI_',
         hasGrowthAndDevelopmentCard: excelData[6] === 'SI_',
         growthDevelopmentControlsReceived: excelData[7] || '',
